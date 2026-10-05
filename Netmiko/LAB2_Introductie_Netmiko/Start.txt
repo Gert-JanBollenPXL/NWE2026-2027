@@ -1,0 +1,8 @@
+On host pc:
+Control panel > Ethernet > Properties
+Configure > Advanced > VLAN ID (change to VLAN you configured)
+
+In VM:
+Check which ip adapters are running (ip a)
+
+sudo ip addr add 172.16.18.7/26 dev enp0s3 && sudo ip link set enp0s3 up
