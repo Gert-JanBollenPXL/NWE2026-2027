@@ -1,0 +1,25 @@
+!
+hostname LAB-SRX-R01
+!
+ip domain name student.local
+!
+username student privilege 10 secret pxl
+!
+interface g0/0/0.118
+  encapsulation dot1Q 118
+  ip address 172.16.18.2 255.255.255.192
+!
+interface GigabitEthernet0/0/0
+ no shutdown
+!
+interface GigabitEthernet0/0/1
+ no shutdown
+ ip address 10.199.66.218 255.255.255.224
+!
+line vty 0 15
+ login local
+ transport input ssh
+!
+crypto key generate rsa
+ 1024
+!
