@@ -1,0 +1,22 @@
+!
+hostname LAB-SRX-SW01
+!
+ip domain name student.local
+!
+username student privilege 10 secret pxl
+!
+vlan 118
+ name Management
+!
+interface Vlan 118
+ ip address 172.16.18.4 255.255.255.192
+!
+ip default-gateway 172.16.18.2
+!
+line vty 0 15
+ login local
+ transport input ssh
+!
+crypto key generate rsa
+ 1024
+!
